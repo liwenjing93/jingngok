@@ -1,0 +1,1881 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="author" content="https://primetimetable.com" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> (12Panther) </title>
+
+<style type="text/css"> 
+         body { 
+             background: #61755D url("../UI/Image/green_board.png"); 
+             font:normal normal normal 14px/20px Arial, Tahoma, Verdana, sans-serif; 
+         } 
+         .round_border{display:block} 
+         .round_border *{background:#fff;display:block;height:1px;overflow:hidden} 
+         .round_border_layer3{background:#c4c4c4;border-left:1px solid #d3d4d5;border-right:1px solid #d3d4d5;margin:0 3px;padding:0 1px} 
+         .round_border_layer2{border-left:1px solid #d3d4d5;border-right:1px solid #d3d4d5;margin:0 2px;padding:0} 
+         .round_border_layer1{border-left:1px solid #c4c4c4;border-right:1px solid #c4c4c4;margin:0 1px} 
+                  
+         .round_border_content{ 
+             border-left:1px solid #c4c4c4; 
+             border-right:1px solid #c4c4c4; 
+             background:#fff; 
+             padding:10px 30px 30px 30px; 
+             overflow:hidden; 
+         } 
+                      
+         div.TimetableOuterContainer { 
+             padding: 5em;     
+             font-size: 92.80%;  
+             min-width: 480px; 
+         } 
+         div.TimetableContainer {  
+             clear:both; 
+         } 
+                      
+         div.Clear {  
+             clear: both; 
+         } 
+                      
+         table.Timetable { 
+             border-collapse: collapse; 
+             border: solid 2px #565; 
+             padding: 0; 
+             table-layout: fixed; 
+             width: 100%; 
+         } 
+                      
+         table.Timetable td { 
+             border-style: solid; 
+             border-color: #586; 
+             border-width: 0 1px 1px 0; 
+             border-collapse: collapse; 
+             font-size: 90%; 
+             height:100%; 
+         } 
+                      
+         table.Timetable td.PeriodHeader, table.Timetable td.PeriodHeaderEven, table.Timetable td.Cell { 
+             overflow: hidden; 
+             -ms-text-overflow: clip; 
+             text-overflow: clip; 
+             white-space: nowrap; 
+         } 
+                      
+         table.Timetable td.DayHeader, table.Timetable td.DayHeaderEven { 
+             font-weight: bold; 
+             text-align: center; 
+         } 
+                      
+         table.Timetable td.Header, table.Timetable td.DayHeader, table.Timetable td.PeriodHeader { 
+             background: #F5F5F5; 
+         } 
+                      
+         table.Timetable td.DayHeaderEven, table.Timetable td.PeriodHeaderEven { 
+             background: #EAFACA; 
+         } 
+                      
+         table.Timetable td.PeriodHeader { 
+             font-size: 90%; 
+         } 
+                      
+         table.Timetable td.Name { 
+             padding: 0 2px; 
+             font-size: 95%; 
+             background-color: #FFF; 
+             text-align:center; 
+         } 
+                      
+         table.Timetable td.Cell { 
+             text-align: center; 
+             height:100%; 
+         } 
+                      
+         table.Timetable td.Even { 
+             background: #F0FADA; 
+             height:100%; 
+         } 
+                      
+         table.Sub { 
+             width:100%; 
+             height:100%; 
+         } 
+                      
+         table.Sub td { 
+             border:none; 
+             height:100%; 
+         } 
+                      
+         div.SchoolTitle { 
+             font-size: large; 
+             padding:10px 5px; 
+         } 
+                      
+         div.SchoolYear { 
+             padding:0 5px 5px; 
+         } 
+                      
+         @media print { 
+              
+             div.TimetableOuterContainer, .round_border, .round_border, .round_border_layer3, .round_border_layer2, .round_border_layer1, .round_border_content {  
+                 margin: 0; padding: 0; border:none; 
+             } 
+                      
+             #WebViewMenu { display:none; } 
+              
+             div.TimetablePage { page-break-after:always; margin:0; border-top:none; padding: 0; } 
+              
+         } 
+         
+</style>
+
+</head>
+<body>
+<div class="TimetableOuterContainer"><div class="TimetableInnerContainer"><b class="round_border"><b class="round_border_layer3"></b><b class="round_border_layer2"></b><b class="round_border_layer1"></b></b><div class="round_border_content"><div class="TimetablePage">
+<div class="SchoolTitle">6Eagle</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />anhtn</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+<td rowspan="2" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />thuydtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />nganpbt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#004f13;color:#ffffff;">CLB Robotics<br />kolapom</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />tuyetpt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />hoant5</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />tuhm</td>
+<td class="Cell Odd" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />tuhm</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />nganpbt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />nganpbt</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Even" style="background-color:#87f487;color:#000000;">Study Hall<br />jthomasfb</td>
+<td class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />anhtn</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />jthomasfb</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">6Panther</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />locnt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Odd" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />thuydtt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />huyenhtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />phuongntl1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />thuydtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />tuyetpt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">CLB Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />darryw</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />phuongntl1</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />thuydtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />phuongntl1</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />huyenhtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />thuydtt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />anhtn</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />darryw</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">6Whale</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />dieplb<br />ngocdt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />tuhm</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />thuydtt</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />nganpbt</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />dieplb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />thuydtt</td>
+<td class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />darryw<br />tuhm</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+<td class="Cell Odd" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />tuyetpt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />locnt</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />thuydtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />jthomasfb<br />tuhm</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Odd" style="background-color:#49db49;color:#ffffff;">Khoa học tự nhiên<br />hoalt<br />vanntt<br />ngocdt</td>
+<td class="Cell Even" style="background-color:#87f487;color:#000000;">Study Hall<br />jenniferj</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />jenniferj</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">7Falcon</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />vula</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />thuydtt</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">STEM<br />vula</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />phuongntl1</td>
+<td class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />thamtt</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+<td rowspan="2" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />huyenhtt</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />hoant5</td>
+<td class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />hoannt1</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />phuongntl1</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />Math new</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />Math new</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">7Rhino</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hangntt2</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />huyenhtt</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />phuongntl1</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />huyenhtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+<td rowspan="2" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />huyenhtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />darryw<br />huyenhtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />darryw<br />huyenhtt</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />hoannt1</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Odd" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">CLB Mỹ thuật<br />ngocdtm</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">STEM<br />vula</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />anhtn</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />thamtt</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />hoant5</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />darryw<br />huyenhtt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#87f487;color:#000000;">Study Hall<br />kolapom</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />kolapom</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">7Shark</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hoannt1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />phuongntl1</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom<br />huyenhtt</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+<td class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />thamtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />haunn</td>
+<td class="Cell Odd" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />hoannt1</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />thuydtt</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj<br />phuongntl1</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />Math new<br />phuongntl1</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoannt1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />dieplb</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />vula</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />darryw<br />tuhm</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />jenniferj</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />hoant5</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />jenniferj</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">8Falcon</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hangtt</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />huyenhtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+<td class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />Simones<br />nganpbt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />thuydtt<br />kevin</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />thuydtt<br />kevin</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoantk</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />thuhth</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">CLB Debate<br />julianw</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />hungdq</td>
+<td class="Cell Odd" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoantk</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />Simones<br />nganpbt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />thuydtt<br />kevin</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />kevin</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />kevin</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">8Rhino</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hoantk<br />thuongpt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thuybtn</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />thuybtn</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />julianw<br />nganpbt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoantk</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb<br />nganpbt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />nganpbt<br />alecb</td>
+<td class="Cell Even" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />julianw<br />nganpbt</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />huyenhtt</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />thuhth</td>
+<td class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />hungdq</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />hoantk</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />julianw<br />nganpbt</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />julianw</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />julianw</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">8Whale</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td width="20%" align="center" class="DayHeader">Tuesday</td>
+<td width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />nguyetnb</td>
+<td class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb<br />nganpbt</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />alecb<br />nganpbt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+<td class="Cell Odd" style="background-color:#87f487;color:#000000;">Study Hall<br />alecb</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />tudv</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td class="Cell Odd" style="background-color:#40e0d0;color:#000000;">Đọc viết sáng tạo<br />thuhth</td>
+<td class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />thuydtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />kevin<br />thuydtt</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />kevin<br />thuydtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />kevin<br />thuydtt</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">STEM<br />trangntt1</td>
+<td class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />diemnth</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+<td class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Even" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Digital Literacy<br />kolapom</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb<br />huyenhtt</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />alecb</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">9Eagle</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />vanntt</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td colspan="3" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">CLB Debate<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td colspan="3" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td colspan="3" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+<td colspan="3" class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />jenniferj</td>
+<td colspan="3" class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />thuybtn</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+<td colspan="3" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />phuongntl1</td>
+<td colspan="3" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">9Panther</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hungdq</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td colspan="3" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+<td colspan="3" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+<td colspan="3" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />phuongntl1</td>
+<td colspan="3" class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+<td colspan="3" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+<td colspan="3" class="Cell Odd" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />hungdq</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Odd" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">9Shark</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />thuhth</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g1<br />thuybtn</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g2<br />hungdq</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />g3<br />thaobtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g1<br />locnt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g2<br />hoantk</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />g3<br />thuhth</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td colspan="3" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />thinhkm</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />vula</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td colspan="3" class="Cell Even" style="background-color:#f2f27a;color:#000000;">Âm nhạc<br />chunghd</td>
+<td colspan="3" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td colspan="3" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />ngocdt</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />Math new</td>
+<td colspan="3" class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />phuongntl1</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Mỹ thuật<br />ngocdtm</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g1<br />kevin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g2<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />g3<br />julianw</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td colspan="3" class="Cell Even" style="background-color:#ffc0c0;color:#000000;">Toán Pomath<br />thaobtt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">Global Citizenship<br />jackc</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td colspan="3" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />hangtt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">10Eagle</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="5" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />diemnth</td>
+<td colspan="5" class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />Lit<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />ESL<br />julianw</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />ESP<br />kevin</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td colspan="5" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td colspan="5" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />thuhth</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />diemnth</td>
+<td class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">CLB Debate<br />simonb</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />G1<br />huyenhtt</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />G2<br />nganpbt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td class="Cell Even" style="background-color:#c0c0c0;color:#000000;">A&D<br />roisin</td>
+<td colspan="5" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c0c0c0;color:#000000;">A&D<br />roisin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />thuhth</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />Lit<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />ESL<br />julianw</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />ESP<br />kevin</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+<td class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />dungbv</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />simonb</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">10Whale</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="7" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td width="20%" align="center" class="DayHeader">Thursday</td>
+<td width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />hoalt</td>
+<td colspan="7" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />thuhth</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />Lit<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />ESL<br />julianw</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">English<br />ESP<br />kevin</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#c0c0c0;color:#000000;">A&D<br />roisin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />hungdq</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td colspan="7" rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb</td>
+<td colspan="5" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />vanntt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#ff6820;color:#000000;">Science<br />alecb</td>
+<td class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+<td class="Cell Even" style="background-color:#8181c3;color:#000000;">CLB Mỹ thuật<br />ngocdtm</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even" style="background-color:#c0c0c0;color:#000000;">A&D<br />roisin</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />g1<br />huyenhtt</td>
+<td class="Cell Odd" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />g2<br />nganpbt</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+<td colspan="7" class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />hungdq</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />thuhth</td>
+<td rowspan="2" class="Cell Even" style="background-color:#000000;color:#ffffff;">Business Studies<br />danielwb</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />Lit<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />ESL<br />julianw</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">English<br />ESP<br />kevin</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />dungbv</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td colspan="5" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />jovenciojpb</td>
+<td class="Cell Even" style="background-color:#94e5ff;color:#000000;">Homeroom<br />danielwb</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">11Eagle</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />trangntt1</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />nguyetnb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 1<br />davids</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td colspan="3" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 2<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td colspan="3" class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td colspan="3" class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thaobtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thaobtt</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+<td colspan="3" class="Cell Even" style="background-color:#c4b4ff;color:#000000;">CLB Debate<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 1<br />thaobtt</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td class="Cell Odd" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 2<br />thaobtt</td>
+<td colspan="3" class="Cell Odd" style="background-color:#40e0d0;color:#000000;">Tự học<br />trangntt1</td>
+<td colspan="3" class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />dungbv</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">11Lion</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="5" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="5" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="5" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />thuybtn</td>
+<td colspan="5" class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thuybtn</td>
+<td colspan="5" class="Cell Odd" style="background-color:#ff6820;color:#000000;">Thể dục<br />dungbv</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 1<br />davids</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td colspan="5" class="Cell Even" style="background-color:#8181c3;color:#000000;">CLB Mỹ thuật<br />ngocdtm</td>
+<td colspan="5" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td colspan="5" class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 2<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td colspan="5" class="Cell Odd" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td colspan="5" class="Cell Even" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />tuyetpt</td>
+<td colspan="5" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td colspan="5" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+<td colspan="5" rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />thuybtn</td>
+<td colspan="5" class="Cell Even" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />tuyetpt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 1<br />thaobtt</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="5" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 2<br />thaobtt</td>
+<td colspan="5" class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="5" class="Cell Even" style="background-color:#40e0d0;color:#000000;">Tự học<br />thuybtn</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">11Shark</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="5" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="5" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="5" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="5" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />lyht</td>
+<td colspan="5" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 1<br />davids</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td colspan="5" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thamtt</td>
+<td colspan="5" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />tuyetpt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#800080;color:#ffffff;">IELTS speaking<br />IFD 2<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td colspan="5" class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="5" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thamtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />simonb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 1<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 2<br />mariab</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td colspan="5" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td colspan="5" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="5" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td colspan="5" class="Cell Odd" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />trangntt1</td>
+<td colspan="5" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />Alevel<br />kevin</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffad5b;color:#000000;">Business (theme 1)<br />Alevel<br />davids</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td rowspan="2" class="Cell Even" style="background-color:#00a8ff;color:#000000;">Foundation Maths<br />IFD 1<br />mariab</td>
+<td rowspan="2" class="Cell Even" style="background-color:#d5ba8a;color:#000000;">DELS<br />IFD 2<br />jackc</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td colspan="5" class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />dungbv</td>
+<td colspan="5" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#55eced;color:#000000;">Business (theme 2)<br />Alevel<br />danielwb</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 1<br />thaobtt</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 2<br />quynhanh</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="5" class="Cell Even" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />tuyetpt</td>
+<td colspan="5" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />tuyetpt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even" style="background-color:#ffad5b;color:#000000;">IELTS<br />IFD 1<br />quynhanh</td>
+<td class="Cell Even" style="background-color:#00a8ff;color:#000000;">Dự án Tự nhiên<br />IFD 2<br />thaobtt</td>
+<td colspan="5" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />J Productions</td>
+<td colspan="5" class="Cell Even" style="background-color:#40e0d0;color:#000000;">Tự học<br />lyht</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="TimetablePage">
+<div class="SchoolTitle">12Falcon</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />thaobtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thaobtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">SCS<br />IFD<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#414141;color:#ffffff;">Toán học<br />thaobtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />IFD<br />J Productions</td>
+<td class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">CLB Ảo thuật<br />2-Alevel<br />J Productions</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">SCS<br />IFD<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Even" style="background-color:#55eced;color:#000000;">Sử - Địa<br />IFD<br />sennth<br />thuongpt</td>
+<td class="Cell Even" style="background-color:#55eced;color:#000000;">Sử - Địa<br />2-Alevel<br />sennth<br />thuongpt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />IFD<br />dungbv</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />2-Alevel<br />dungbv</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />IFD<br />nguyetnb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />2-Alevel<br />nguyetnb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />IFD<br />thamtt</td>
+<td class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />2-Alevel<br />thamtt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />IFD<br />trangttt</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />2-Alevel<br />trangttt</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div class="SchoolTitle">12Panther</div>
+<div class="SchoolYear"></div>
+<div class="TimetableContainer">
+<table class="Timetable" style="background-color:#FFFFFF;">
+<thead><tr><td width="50px" class="DayHeader">&nbsp;</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Monday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Tuesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Wednesday</td>
+<td colspan="3" width="20%" align="center" class="DayHeader">Thursday</td>
+<td colspan="3" width="20%" align="center" class="DayHeaderEven">Friday</td>
+</tr>
+</thead>
+<tbody>
+<tr><td width="50px" class="Name">08:20<br />09:00</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Sinh hoạt<br />trangttt<br />thamtt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">SCS<br />IFD<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thamtt</td>
+</tr>
+<tr><td width="50px" class="Name">09:05<br />09:45</td>
+<td colspan="3" rowspan="2" class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />thamtt</td>
+</tr>
+<tr><td width="50px" class="Name">10:00<br />10:40</td>
+<td colspan="3" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td colspan="3" class="Cell Even" style="background-color:#8181c3;color:#000000;">Vật lý<br />hangntt2</td>
+<td colspan="3" rowspan="2" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Ngữ văn<br />nguyetnb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+</tr>
+<tr><td width="50px" class="Name">10:45<br />11:25</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">AELS<br />IFD<br />jthomasfb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />2-Alevel<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Business<br />3-Alevel<br />davids</td>
+<td class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">CLB thể thao (Basketball/Gym club)<br />IFD<br />minhpq<br />kolapom</td>
+<td class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">CLB thể thao (Basketball/Gym club)<br />2-Alevel<br />minhpq<br />kolapom</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+</tr>
+<tr><td width="50px" class="Name">11:30<br />12:10</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td colspan="3" class="Cell Even" style="background-color:#20a5a6;color:#ffffff;">Hóa học<br />hoalt</td>
+</tr>
+<tr><td width="50px" class="Name">12:10<br />13:25</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Odd">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+<tr><td width="50px" class="Name">13:30<br />14:10</td>
+<td colspan="3" class="Cell Even" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#a52a00;color:#ffffff;">SCS<br />IFD<br />jackc</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td colspan="3" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Sinh học<br />lyht</td>
+<td colspan="3" class="Cell Odd" style="background-color:#4b0082;color:#ffffff;">Lịch sử<br />sennth</td>
+<td class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />IFD<br />thamtt</td>
+<td class="Cell Even" style="background-color:#414141;color:#ffffff;">Toán học<br />2-Alevel<br />thamtt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+</tr>
+<tr><td width="50px" class="Name">14:15<br />14:55</td>
+<td rowspan="2" class="Cell Even" style="background-color:#94e5ff;color:#000000;">Intro to Business<br />IFD<br />davids</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />2-Alevel<br />jovenciojpb</td>
+<td rowspan="2" class="Cell Even" style="background-color:#ffd700;color:#000000;">Maths<br />3-Alevel<br />jovenciojpb</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />IFD<br />trangttt</td>
+<td class="Cell Even" style="background-color:#c4b4ff;color:#000000;">Tiếng Anh<br />2-Alevel<br />trangttt</td>
+<td rowspan="2" class="Cell Even" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />IFD<br />hoannt1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#000000;color:#ffffff;">Dự án Xã hội<br />2-Alevel<br />hoannt1</td>
+<td rowspan="2" class="Cell Odd" style="background-color:#2b2bdc;color:#ffffff;">Literature<br />3-Alevel<br />simonb</td>
+<td class="Cell Even" style="background-color:#55eced;color:#000000;">Sử - Địa<br />IFD<br />sennth<br />thuongpt</td>
+<td class="Cell Even" style="background-color:#55eced;color:#000000;">Sử - Địa<br />2-Alevel<br />sennth<br />thuongpt</td>
+</tr>
+<tr><td width="50px" class="Name">15:15<br />15:55</td>
+<td colspan="3" class="Cell Odd" style="background-color:#8b8b00;color:#ffffff;">Địa lý<br />thuongpt</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />IFD<br />dungbv</td>
+<td class="Cell Even" style="background-color:#ff6820;color:#000000;">Thể dục<br />2-Alevel<br />dungbv</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+<td class="Cell Even">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+<b class="round_border"><b class="round_border_layer1"></b><b class="round_border_layer2"></b><b class="round_border_layer3"></b></b></div>
+
+</body>
+</html>
